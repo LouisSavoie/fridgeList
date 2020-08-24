@@ -39,9 +39,14 @@
 
         <div id="app">
             <h1>{{ title }}</h1>
+            <form v-on:submit.prevent="onSubmit" v-on:submit="add(newItem)">
+                <p>{{ error }}</p>
+                <input type="text" v-model="newItem" placeholder="New Item">
+                <!-- <button type="button" v-on:click="add(newItem)">Add</button> -->
+            </form>
             <ul>
                 <li v-for="item in list">
-                    <span v-on:click="add(item)">{{ item }}</span>
+                    <span>{{ item }}</span>
                     <span v-on:click="remove(item)">    X</span>
                 </li>
             </ul>
