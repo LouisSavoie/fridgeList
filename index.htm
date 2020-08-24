@@ -39,6 +39,12 @@
 
         <div id="app">
             <h1>{{ title }}</h1>
+            <ul>
+                <li v-for="item in list">
+                    <span v-on:click="add(item)">{{ item }}</span>
+                    <span v-on:click="remove(item)">    X</span>
+                </li>
+            </ul>
         </div>
 
         <!-- Vue CDN -->
