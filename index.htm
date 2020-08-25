@@ -28,22 +28,27 @@
         <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
         <link rel="manifest" href="favicon_io/site.webmanifest">
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Yellowtail&display=swap" rel="stylesheet">
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/f48ece1f64.js" crossorigin="anonymous"></script>
 
     </head>
 
     <body>
 
-        <nav>
+        <h1>Fridge List</h1>
 
-        </nav>
+        <div class="container">
+    
+            <div id="app">
+                <index v-show="state === 'index'"></index>
+                <fridge v-show="state === 'fridge'"></fridge>
+                <freezer v-show="state === 'freezer'"></freezer>
+                <pantry v-show="state === 'pantry'"></pantry>
+                <groceries v-show="state === 'groceries'"></groceries>
+            </div>
 
-        <div id="app">
-            <h1>{{ title }}</h1>
-            <index v-show="state === 'index'"></index>
-            <fridge v-show="state === 'fridge'"></fridge>
-            <freezer v-show="state === 'freezer'"></freezer>
-            <pantry v-show="state === 'pantry'"></pantry>
-            <groceries v-show="state === 'groceries'"></groceries>
         </div>
 
         <!-- Vue CDN -->

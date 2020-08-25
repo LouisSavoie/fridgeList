@@ -1,0 +1,60 @@
+body {
+    background: paleturquoise;
+    font-family: 'Yellowtail', cursive;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+}
+
+h2 {
+    margin: 0px;
+    text-align: center;
+}
+
+.fa-reply {
+    float: left;
+    font-size: 2em;
+}
+
+h1, h2, .fa-reply {
+    background: #b9b9b9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #e4e4e4, #b9b9b9, #000000, #FFFFFF, #e4e4e4);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #e0e0e0, #FFFFFF, #000000, #FFFFFF, #e0e0e0, #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+}
+
+input {
+    outline: none;
+    border: 2px solid black;
+    border-radius: 0px;
+}
+
+ul {
+    height: 85%;
+    margin: 0px;
+    padding: 0px;
+    overflow: auto;
+}
+
+li {
+    margin-top: 5px;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.fa-trash-alt {
+    float: right;
+}
+
+.component-container {
+    height: 80vh;
+}
