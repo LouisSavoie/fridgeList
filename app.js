@@ -1,8 +1,22 @@
+let eventBus = new Vue();
+
+Vue.component('index', {
+    template: `
+    <button type="button" v-on:click="setState('fridge')">Fridge</button>
+    `,
+    methods: {
+        setState(state) {
+            eventBus.$emit('set-state', state);
+        }
+    }
+});
+
 Vue.component('fridge', {
     template: `
         <div>
+            <button type="button" v-on:click="setState('index')">Back</button>
             <h2>Fridge</h2>
-            <form v-on:submit.prevent="onSubmit" v-on:submit="add(newItem)">
+            <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
                 <input type="text" v-model="newItem" placeholder="New Item">
                 <!-- <button type="button" v-on:click="add(newItem)">Add</button> -->
@@ -36,6 +50,9 @@ Vue.component('fridge', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+        },
+        setState(state) {
+            eventBus.$emit('set-state', state);
         }
     }
 });
@@ -44,11 +61,14 @@ let app = new Vue({
     el: '#app',
     data: {
         title: 'Fridge List',
-        state: 0
+        state: 'index'
     },
     methods: {
-        setState(index) {
-            this.state = index;
-        }
+        
+    },
+    mounted() {
+        eventBus.$on('set-state', state => {
+            this.state = state;
+        });
     }
 });

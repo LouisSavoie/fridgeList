@@ -39,9 +39,8 @@
 
         <div id="app">
             <h1>{{ title }}</h1>
-            <button type="button" v-on:click="setState(0)">Back</button>
-            <button type="button" v-on:click="setState(1)">Fridge</button>
-            <fridge v-show="state === 1"></fridge>
+            <index v-show="state === 'index'"></index>
+            <fridge v-show="state === 'fridge'"></fridge>
         </div>
 
         <!-- Vue CDN -->
