@@ -42,7 +42,7 @@ ul {
     height: 85%;
     margin: 0px;
     padding: 0px;
-    overflow: scroll;
+    overflow: auto;
 }
 
 li {
