@@ -18,25 +18,26 @@ Vue.component('index', {
 
 Vue.component('fridge', {
     template: `
-        <div>
-            <button type="button" v-on:click="setState('index')">Back</button>
+        <div class="component-container">
+            
+            <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Fridge</h2>
+            
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
                 <input type="text" v-model="newItem" placeholder="New Item">
-                <!-- <button type="button" v-on:click="add(newItem)">Add</button> -->
             </form>
             <ul>
                 <li v-for="item in list">
-                    <span>{{ item }}</span>
-                    <span v-on:click="remove(item)">    X</span>
+                    {{ item }}
+                    <i class="fas fa-trash-alt" v-on:click="remove(item)"></i>
                 </li>
             </ul>
         </div>
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves"],
+            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
             newItem: null,
             error: null
         }
@@ -64,25 +65,28 @@ Vue.component('fridge', {
 
 Vue.component('freezer', {
     template: `
-        <div>
-            <button type="button" v-on:click="setState('index')">Back</button>
+        <div class="component-container">
+
+            <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Freezer</h2>
+
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
                 <input type="text" v-model="newItem" placeholder="New Item">
-                <!-- <button type="button" v-on:click="add(newItem)">Add</button> -->
             </form>
+
             <ul>
                 <li v-for="item in list">
-                    <span>{{ item }}</span>
-                    <span v-on:click="remove(item)">    X</span>
+                    {{ item }}
+                    <i class="fas fa-trash-alt" v-on:click="remove(item)"></i>
                 </li>
             </ul>
+
         </div>
     `,
     data() {
         return {
-            list: ["Burgers", "Kompot", "Broccoli"],
+            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
             newItem: null,
             error: null
         }
@@ -110,25 +114,28 @@ Vue.component('freezer', {
 
 Vue.component('pantry', {
     template: `
-        <div>
-            <button type="button" v-on:click="setState('index')">Back</button>
+        <div class="component-container">
+
+            <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Pantry</h2>
+
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
                 <input type="text" v-model="newItem" placeholder="New Item">
-                <!-- <button type="button" v-on:click="add(newItem)">Add</button> -->
             </form>
+
             <ul>
                 <li v-for="item in list">
-                    <span>{{ item }}</span>
-                    <span v-on:click="remove(item)">    X</span>
+                    {{ item }}
+                    <i class="fas fa-trash-alt" v-on:click="remove(item)"></i>
                 </li>
             </ul>
+
         </div>
     `,
     data() {
         return {
-            list: ["Bread", "Tomatoes", "Onions"],
+            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
             newItem: null,
             error: null
         }
@@ -156,25 +163,28 @@ Vue.component('pantry', {
 
 Vue.component('groceries', {
     template: `
-        <div>
-            <button type="button" v-on:click="setState('index')">Back</button>
+        <div class="component-container">
+
+            <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Groceries</h2>
+
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
                 <input type="text" v-model="newItem" placeholder="New Item">
-                <!-- <button type="button" v-on:click="add(newItem)">Add</button> -->
             </form>
+
             <ul>
                 <li v-for="item in list">
-                    <span>{{ item }}</span>
-                    <span v-on:click="remove(item)">    X</span>
+                    {{ item }}
+                    <i class="fas fa-trash-alt" v-on:click="remove(item)"></i>
                 </li>
             </ul>
+
         </div>
     `,
     data() {
         return {
-            list: ["Kvass", "Semechki", "Butter"],
+            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
             newItem: null,
             error: null
         }
@@ -203,7 +213,6 @@ Vue.component('groceries', {
 let app = new Vue({
     el: '#app',
     data: {
-        title: 'Fridge List',
         state: 'index'
     },
     methods: {
