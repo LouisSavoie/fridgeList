@@ -1,5 +1,5 @@
 body {
-    background: paleturquoise;
+    background: black;
     font-family: 'Yellowtail', cursive;
 }
 
@@ -22,7 +22,7 @@ h2 {
     font-size: 2em;
 }
 
-h1, h2, .fa-reply {
+h1, h2, .fa-reply, #cold-boy {
     background: #b9b9b9;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to top, #e4e4e4, #b9b9b9, #000000, #FFFFFF, #e4e4e4);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to top, #e0e0e0, #FFFFFF, #000000, #FFFFFF, #e0e0e0, #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
@@ -53,6 +53,50 @@ li {
 
 .fa-trash-alt {
     float: right;
+}
+
+#pantry-area {
+    display: block;
+    background-image: url("assets/pantry.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 21vh;
+    width: 40vh;
+}
+
+#freezer-area {
+    display: block;
+    background-image: url("assets/freezer.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 18vh;
+    width: 40vh;
+}
+
+#fridge-area {
+    display: block;
+    background-image: url("assets/fridge.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 44vh;
+    width: 40vh;
+}
+
+#cold-boy {
+    display: inline-block;
+    margin-top: 5vh;
+    margin-left: 7vh;
+}
+
+#groceries-area {
+    display: inline-block;
+    margin-top: 7vh;
+    margin-left: 50%;
+    height: 14vh;
+    width: 10vh;
 }
 
 .component-container {
