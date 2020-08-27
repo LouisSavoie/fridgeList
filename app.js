@@ -3,10 +3,11 @@ let eventBus = new Vue();
 Vue.component('index', {
     template: `
     <div>
-        <button type="button" v-on:click="setState('fridge')">Fridge</button>
-        <button type="button" v-on:click="setState('freezer')">Freezer</button>
-        <button type="button" v-on:click="setState('pantry')">Pantry</button>
-        <button type="button" v-on:click="setState('groceries')">Groceries</button>
+        <div id="pantry-area" type="button" v-on:click="setState('pantry')"></div>
+        <div id="freezer-area" type="button" v-on:click="setState('freezer')"><p id="cold-boy">Cold Boy</p></div>
+        <div id="fridge-area" type="button" v-on:click="setState('fridge')">
+            <div id="groceries-area" type="button" v-on:click.stop="setState('groceries')"></div>
+        </div>
     </div>
     `,
     methods: {
