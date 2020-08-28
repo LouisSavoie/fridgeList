@@ -19,14 +19,14 @@ Vue.component('index', {
 
 Vue.component('fridge', {
     template: `
-        <div class="component-container">
+        <div class="component-container" id="fridge-container">
             
             <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Fridge</h2>
             
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
-                <input type="text" v-model="newItem" placeholder="New Item">
+                <input type="text" v-model="newItem" placeholder="Add New Item">
             </form>
             <ul>
                 <li v-for="item in list">
@@ -66,14 +66,14 @@ Vue.component('fridge', {
 
 Vue.component('freezer', {
     template: `
-        <div class="component-container">
+        <div class="component-container" id="freezer-container">
 
             <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Freezer</h2>
 
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
-                <input type="text" v-model="newItem" placeholder="New Item">
+                <input type="text" v-model="newItem" placeholder="Add New Item">
             </form>
 
             <ul>
@@ -115,14 +115,14 @@ Vue.component('freezer', {
 
 Vue.component('pantry', {
     template: `
-        <div class="component-container">
+        <div class="component-container" id="pantry-container">
 
             <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Pantry</h2>
 
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
-                <input type="text" v-model="newItem" placeholder="New Item">
+                <input type="text" v-model="newItem" placeholder="Add New Item">
             </form>
 
             <ul>
@@ -164,14 +164,14 @@ Vue.component('pantry', {
 
 Vue.component('groceries', {
     template: `
-        <div class="component-container">
+        <div class="component-container" id="groceries-container">
 
             <i class="fas fa-reply" type="button" v-on:click="setState('index')"></i>
             <h2>Groceries</h2>
 
             <form v-on:submit.prevent="" v-on:submit="add(newItem)">
                 <p>{{ error }}</p>
-                <input type="text" v-model="newItem" placeholder="New Item">
+                <input type="text" v-model="newItem" placeholder="Add New Item">
             </form>
 
             <ul>
@@ -185,7 +185,7 @@ Vue.component('groceries', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
             newItem: null,
             error: null
         }

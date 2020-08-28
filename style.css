@@ -1,5 +1,5 @@
 body {
-    background: black;
+    background: rgb(15, 15, 15);
     font-family: 'Yellowtail', cursive;
 }
 
@@ -9,7 +9,10 @@ body {
 }
 
 h1 {
+    margin: 4vh 0px 2vh 0px;
     text-align: center;
+    color: #7dd6fc;
+    text-shadow: 2px 2px 5px rgba(255, 255, 255, .75);
 }
 
 h2 {
@@ -22,20 +25,17 @@ h2 {
     font-size: 2em;
 }
 
-h1, h2, .fa-reply, #cold-boy {
-    background: #b9b9b9;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to top, #e4e4e4, #b9b9b9, #000000, #FFFFFF, #e4e4e4);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to top, #e0e0e0, #FFFFFF, #000000, #FFFFFF, #e0e0e0, #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    -webkit-background-clip: text;
-    -moz-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color:transparent;
+h2, .fa-reply {
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .75);
 }
 
 input {
+    padding: 5px 0px;
     outline: none;
-    border: 2px solid black;
-    border-radius: 0px;
+    border: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
 }
 
 ul {
@@ -46,9 +46,14 @@ ul {
 }
 
 li {
-    margin-top: 5px;
+    padding: 5px 0px;
     list-style: none;
     font-family: 'Montserrat', sans-serif;
+    background: white;
+}
+
+li:nth-of-type(odd) {
+    background: rgb(235, 235, 235);
 }
 
 .fa-trash-alt {
@@ -89,6 +94,8 @@ li {
     display: inline-block;
     margin-top: 5vh;
     margin-left: 7vh;
+    color: black;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, .75);
 }
 
 #groceries-area {
@@ -101,4 +108,29 @@ li {
 
 .component-container {
     height: 80vh;
+    padding: 10px;
+    border: 20px solid;
+}
+
+#fridge-container {
+    background: white;
+    border-color: #a7e4ff;
+    border-radius: 15px;
+}
+
+#freezer-container {
+    background: white;
+    border-color: #a7e4ff;
+    border-radius: 15px;
+}
+
+#pantry-container {
+    background: #473122;
+    border-color: #896044;
+}
+
+#groceries-container {
+    background: white;
+    border-style: double;
+    border-color: lightgreen;
 }
