@@ -38,10 +38,19 @@ Vue.component('fridge', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
+    },
+    mounted() {
+        if (localStorage.getItem('fridge')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('fridge'));
+            } catch(e) {
+              localStorage.removeItem('fridge');
+            }
+          }
     },
     methods: {
         add(item) {
@@ -49,6 +58,7 @@ Vue.component('fridge', {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -57,6 +67,11 @@ Vue.component('fridge', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('fridge', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
@@ -87,10 +102,19 @@ Vue.component('freezer', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
+    },
+    mounted() {
+        if (localStorage.getItem('freezer')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('freezer'));
+            } catch(e) {
+              localStorage.removeItem('freezer');
+            }
+          }
     },
     methods: {
         add(item) {
@@ -98,6 +122,7 @@ Vue.component('freezer', {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -106,6 +131,11 @@ Vue.component('freezer', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('freezer', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
@@ -136,10 +166,19 @@ Vue.component('pantry', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
+    },
+    mounted() {
+        if (localStorage.getItem('pantry')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('pantry'));
+            } catch(e) {
+              localStorage.removeItem('pantry');
+            }
+          }
     },
     methods: {
         add(item) {
@@ -147,6 +186,7 @@ Vue.component('pantry', {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -155,6 +195,11 @@ Vue.component('pantry', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('pantry', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
@@ -185,10 +230,19 @@ Vue.component('groceries', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
+    },
+    mounted() {
+        if (localStorage.getItem('groceries')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('groceries'));
+            } catch(e) {
+              localStorage.removeItem('groceries');
+            }
+          }
     },
     methods: {
         add(item) {
@@ -196,6 +250,7 @@ Vue.component('groceries', {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -204,6 +259,11 @@ Vue.component('groceries', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('groceries', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
