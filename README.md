@@ -6,7 +6,7 @@ Keep track of what is in your fridge, freezer, and pantry, then as you make your
 
 ## Instructions
 
-1. [Click Here](https://still-sierra-64206.herokuapp.com/) to view it live on [Heroku](heroku.com)!
+1. [Click Here](https://www.louissavoie.com/projects/fridgeList/index.html) to view it live!
 2. Click on the area you want to edit.
 3. Type in new items and hit 'enter' to add them to the list, or click the trash can icon next to an item to delete it.
 * Lists are stored locally so if you are shopping with your phone, tablet, etc., you must use that device to make out your lists, or when you get to the store, they won't be there!
