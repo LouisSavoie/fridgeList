@@ -38,7 +38,7 @@ Vue.component('fridge', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
@@ -102,7 +102,7 @@ Vue.component('freezer', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
@@ -166,7 +166,7 @@ Vue.component('pantry', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
@@ -230,7 +230,7 @@ Vue.component('groceries', {
     `,
     data() {
         return {
-            list: ["Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves", "Carrots", "Bay Leaves", "Beef", "Carrots", "Bay Leaves"],
+            list: [],
             newItem: null,
             error: null
         }
