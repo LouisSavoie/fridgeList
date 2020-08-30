@@ -43,12 +43,22 @@ Vue.component('fridge', {
             error: null
         }
     },
+    mounted() {
+        if (localStorage.getItem('fridge')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('fridge'));
+            } catch(e) {
+              localStorage.removeItem('fridge');
+            }
+          }
+    },
     methods: {
         add(item) {
             if (this.newItem) {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -57,6 +67,11 @@ Vue.component('fridge', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('fridge', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
@@ -92,12 +107,22 @@ Vue.component('freezer', {
             error: null
         }
     },
+    mounted() {
+        if (localStorage.getItem('freezer')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('freezer'));
+            } catch(e) {
+              localStorage.removeItem('freezer');
+            }
+          }
+    },
     methods: {
         add(item) {
             if (this.newItem) {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -106,6 +131,11 @@ Vue.component('freezer', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('freezer', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
@@ -141,12 +171,22 @@ Vue.component('pantry', {
             error: null
         }
     },
+    mounted() {
+        if (localStorage.getItem('pantry')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('pantry'));
+            } catch(e) {
+              localStorage.removeItem('pantry');
+            }
+          }
+    },
     methods: {
         add(item) {
             if (this.newItem) {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -155,6 +195,11 @@ Vue.component('pantry', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('pantry', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
@@ -190,12 +235,22 @@ Vue.component('groceries', {
             error: null
         }
     },
+    mounted() {
+        if (localStorage.getItem('groceries')) {
+            try {
+              this.list = JSON.parse(localStorage.getItem('groceries'));
+            } catch(e) {
+              localStorage.removeItem('groceries');
+            }
+          }
+    },
     methods: {
         add(item) {
             if (this.newItem) {
                 this.list.push(item);
                 this.newItem = null;
                 this.error = null;
+                this.save();
             }
             else {
                 this.error = "New Item is empty!";
@@ -204,6 +259,11 @@ Vue.component('groceries', {
         remove(item) {
             let index = this.list.indexOf(item);
             this.list.splice(index, 1);
+            this.save();
+        },
+        save() {
+            const parsed = JSON.stringify(this.list);
+            localStorage.setItem('groceries', parsed);
         },
         setState(state) {
             eventBus.$emit('set-state', state);
